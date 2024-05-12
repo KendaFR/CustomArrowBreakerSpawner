@@ -1,6 +1,5 @@
 package fr.kenda.customarrowbreakerspawner;
 
-import fr.kenda.customarrowbreakerspawner.managers.FileManager;
 import fr.kenda.customarrowbreakerspawner.utils.Messages;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;

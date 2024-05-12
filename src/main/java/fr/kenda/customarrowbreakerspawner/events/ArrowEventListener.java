@@ -1,7 +1,8 @@
 package fr.kenda.customarrowbreakerspawner.events;
 
 import fr.kenda.customarrowbreakerspawner.utils.Config;
-import org.bukkit.*;
+import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -12,13 +13,23 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 
 import java.util.HashMap;
-import java.util.Random;
 import java.util.UUID;
 
 
 public class ArrowEventListener implements Listener {
 
-    private HashMap<UUID, String> arrows = new HashMap<>();
+    private final HashMap<UUID, String> arrows = new HashMap<>();
+
+    private static ItemStack getShotArrow(PlayerInventory inventory) {
+        for (int slot = 0; slot < inventory.getSize(); ++slot) {
+            ItemStack stack = inventory.getItem(slot);
+
+            if (stack != null && stack.getType() == Material.ARROW) {
+                return stack;
+            }
+        }
+        return null;
+    }
 
     @EventHandler
     public void onShoot(EntityShootBowEvent e) {
@@ -39,13 +50,10 @@ public class ArrowEventListener implements Listener {
                 String nameArrow = arrows.get(id);
 
 
-                if (nameArrow.equalsIgnoreCase(Config.getString("arrow.explosive.name")))
-                {
+                if (nameArrow.equalsIgnoreCase(Config.getString("arrow.explosive.name"))) {
                     arrow.getWorld().createExplosion(arrow.getLocation(), Config.getInt("arrow.explosive.force"));
                     arrow.remove();
-                }
-                else if (nameArrow.equalsIgnoreCase(Config.getString("arrow.teleport.name")))
-                {
+                } else if (nameArrow.equalsIgnoreCase(Config.getString("arrow.teleport.name"))) {
                     Player p = (Player) arrow.getShooter();
                     Location arrowLoc = arrow.getLocation();
                     Location pLoc = p.getLocation();
@@ -57,17 +65,4 @@ public class ArrowEventListener implements Listener {
             }
         }
     }
-
-
-    private static ItemStack getShotArrow(PlayerInventory inventory) {
-        for (int slot = 0; slot < inventory.getSize(); ++slot) {
-            ItemStack stack = inventory.getItem(slot);
-
-            if (stack != null && stack.getType() == Material.ARROW) {
-                return stack;
-            }
-        }
-        return null;
-    }
-
 }
