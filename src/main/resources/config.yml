@@ -1,0 +1,23 @@
+##################################################################
+#                         Author: Kenda                          #
+#                      Created: 11/05/2024                       #
+#               Plugin: CustomArrowBreakerSpawner                #
+#  github: https://github.com/KendaFR/CustomArrowBreakerSpawner  #
+##################################################################
+
+prefix: "&f[&aCustomArrowBreakerSpawner&f]"
+
+#Configuration des flèches
+arrow:
+  explosive:
+    #Le nom de l'item
+    name: "&c[Flèche Explosive]"
+    lores:
+      - "&cUne flèche &lExplosive !"
+    #La force d'explosion de la flèche
+    force: 3
+  teleport:
+    #Le nom de l'item
+    name: "&5[Flèche de téléportation]"
+    lores:
+      - "&5Une flèche pour se téléporter loin !!"
