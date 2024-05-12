@@ -3,6 +3,8 @@ version: '${project.version}'
 main: fr.kenda.customarrowbreakerspawner.CustomArrowBreakerSpawner
 authors: [Kenda]
 description: Plugin pour le client Fiverr ijuju_68
+depend:
+  - WildStacker
 commands:
   givearrow:
     description: Commande pour se give la flèche

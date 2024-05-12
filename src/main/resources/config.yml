@@ -31,3 +31,10 @@ spawnerbreaker:
   custom_name: false
   #nom de l'item neccessaire pour récupéré. Laisser vide si pas de nom spécifique.
   name: ""
+  #Lore de l'item
+  #{durability_left} represente le nombre d'utilisation restant
+  #{durability} represente le nombre d'utilisation max
+  lores:
+    - "&7Utilisation: &c{durability_left}&f/&a{durability}"
+  #La durabilité de l'item (en utilisation)
+  durability: 10

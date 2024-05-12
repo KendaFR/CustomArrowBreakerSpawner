@@ -10,8 +10,6 @@ public final class CustomArrowBreakerSpawner extends JavaPlugin {
 
     private Managers managers;
 
-    private String prefix;
-
     public static CustomArrowBreakerSpawner getInstance() {
         return instance;
     }
@@ -22,7 +20,7 @@ public final class CustomArrowBreakerSpawner extends JavaPlugin {
 
         instance = this;
         managers = new Managers();
-        prefix = Messages.getPrefix();
+        String prefix = Messages.getPrefix();
 
         Bukkit.getConsoleSender().sendMessage(Messages.transformColor(
                 "\n§a########################## " + "\n" +
@@ -33,15 +31,7 @@ public final class CustomArrowBreakerSpawner extends JavaPlugin {
 
     }
 
-    @Override
-    public void onDisable() {
-    }
-
     public Managers getManagers() {
         return managers;
-    }
-
-    public String getPrefix() {
-        return prefix;
     }
 }

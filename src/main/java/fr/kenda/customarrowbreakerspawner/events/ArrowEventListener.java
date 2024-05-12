@@ -43,8 +43,9 @@ public class ArrowEventListener implements Listener {
     @EventHandler
     public void onArrowHit(ProjectileHitEvent e) {
 
-        if (e.getEntity() instanceof Arrow arrow) {
+        if (e.getEntity() instanceof Arrow) {
 
+            Arrow arrow = (Arrow) e.getEntity();
             UUID id = arrow.getUniqueId();
             if (arrows.containsKey(id)) {
                 String nameArrow = arrows.get(id);

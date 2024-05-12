@@ -18,10 +18,11 @@ public class GiveArrowCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
 
-        if (!(commandSender instanceof Player player)) {
+        if (!(commandSender instanceof Player)) {
             commandSender.sendMessage(Messages.getPrefix() + "§cSeul un joueur peut faire cette commande.");
             return false;
         }
+        Player player = (Player) commandSender;
         if (!player.hasPermission(Permission.GIVE_ARROW)) {
             player.sendMessage(Messages.getMessage("no_permission"));
             return false;
