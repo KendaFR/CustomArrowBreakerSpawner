@@ -1,2 +1,3 @@
 no_permission: "&cTu n'as pas la permission de faire cette commande."
-received_arrow: "&bTu viens de recevoir {arrow}"
+received_arrow: "&bTu viens de recevoir {arrow}."
+spawnerbreaker_receive: "&bTu viens de recevoir l'item pour casser le spawner."

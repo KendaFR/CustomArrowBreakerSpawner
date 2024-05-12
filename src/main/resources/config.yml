@@ -21,3 +21,13 @@ arrow:
     name: "&5[Flèche de téléportation]"
     lores:
       - "&5Une flèche pour se téléporter loin !!"
+
+#Configuration du spawner breaker
+spawnerbreaker:
+  #Material neccessaire pour casser le spawner.
+  #Pour trouver le material: https://javadocs.olziedev.com/spigot/1.8.8/index.html?org/bukkit/Material.html
+  material: WOOD_SPADE
+  #Si l'item doit avoir un nom spécifique
+  custom_name: false
+  #nom de l'item neccessaire pour récupéré. Laisser vide si pas de nom spécifique.
+  name: ""
